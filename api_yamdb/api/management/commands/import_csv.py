@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        MODELS_FILES = {
+        models_files = {
             Genre: 'genre.csv',
             Category: 'category.csv',
             User: 'users.csv',
