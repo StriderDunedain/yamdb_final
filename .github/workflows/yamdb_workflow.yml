@@ -42,7 +42,7 @@ jobs:
         # Запуск скрипта авторизации на Docker Hub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKER_USERNAME }} 
+          username: ${{ secrets.DOCKER_LOGIN }} 
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to Docker Hub
         # Пуш образа в Docker Hub 
@@ -50,7 +50,7 @@ jobs:
         with:
           push: true
           context: ./api_yamdb/
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:v1.0
+          tags: ${{ secrets.DOCKER_LOGIN }}/yamdb_final:v1.0
   
   deploy:
     runs-on: ubuntu-latest
