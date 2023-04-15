@@ -1,4 +1,4 @@
-![status badge](https://github.com/StriderDunedain/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+![Status](https://github.com/StriderDunedain/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 # API for YaMDb
 
 This project collects reviews, ratings and comments on movies, books, music and pretty much anything else you can imagine!
