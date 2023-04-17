@@ -75,3 +75,6 @@ The following points are roughly as they should be. You should do as you are acc
  
 ## Afterword
 We hope you get the best of experience from using our service. If you happen to notice some bugs that have slipped us or simply want to share your experience, feel free to reach out.
+
+
+
