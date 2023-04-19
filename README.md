@@ -37,6 +37,9 @@ The following points are roughly as they should be. You should do as you are acc
 4. And finally make some db magic - `docker-compose exec web python manage.py dumpdata > fixtures.json`
 5. It should work by now, I guess?
 
+Check website's availability at these addresses: `http://<vm-ip>/api/v1/`, `http://<vm-ip>/admin` and `http://<vm-ip>/redoc`
+- (E.g. My vm's IP is `158.160.23.197`, so this is the address I should open `http://<158.160.23.197>/redoc`
+
 ## What current-version API can do
 1. Get all genres, along with categories, titles and their corresponding reviews and comments
 2. Make, update and delete reviews and comments
@@ -45,29 +48,29 @@ The following points are roughly as they should be. You should do as you are acc
 
 ## Examples of usage
 1. GET-requests (**NB!** The resulting JSON objects are paginated and therefore do not have all desired objects in one bundle):
- - Get all:
-   - Reviews - `titles/{title_id}/reviews/`
-   - Comments - `titles/{title_id}/reviews/{review_id}/comments/`
-   - All categories, genres and titles - `categories/`, `genres/` and `titles/` respectively
- - Get one specific:
-   - Review - `titles/{title_id}/reviews/{review_id}/`
-   - Comment - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`
+   - Get all:
+     - Reviews - `titles/{title_id}/reviews/`
+     - Comments - `titles/{title_id}/reviews/{review_id}/comments/`
+     - All categories, genres and titles - `categories/`, `genres/` and `titles/` respectively
+   - Get one specific:
+     - Review - `titles/{title_id}/reviews/{review_id}/`
+     - Comment - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`
 
 2. POST-requests:
- - Reviews - `titles/{title_id}/reviews/`, with required `text` and `score` fields
- - Comments - `titles/{title_id}/reviews/{review_id}/comments/`, with a required `text` field
+   - Reviews - `titles/{title_id}/reviews/`, with required `text` and `score` fields
+   - Comments - `titles/{title_id}/reviews/{review_id}/comments/`, with a required `text` field
 
 3. PATCH-requests:
- - Reviews - `titles/{title_id}/reviews/{review_id}/`, with required `text` and `score` fields
- - Comments - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`, with a required `text` field
+   - Reviews - `titles/{title_id}/reviews/{review_id}/`, with required `text` and `score` fields
+   - Comments - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`, with a required `text` field
 
 4. DELETE-requests:
- - Reviews - `titles/{title_id}/reviews/{review_id}/`
- - Comments - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`
+   - Reviews - `titles/{title_id}/reviews/{review_id}/`
+   - Comments - `titles/{title_id}/reviews/{review_id}/comments/{comment_id}/`
 
 5. Authorization details:
- - Get your authorization details - GET-request to `users/me/`
- - Update your authorization details - PATCH-request to `users/me/`, with required `username` and `email` fields and three other optional fields - `first_name`, `last_name` and `bio`
+   - Get your authorization details - GET-request to `users/me/`
+   - Update your authorization details - PATCH-request to `users/me/`, with required `username` and `email` fields and three other optional fields - `first_name`, `last_name` and `bio`
 
 ## Authors
  - Team Lead - @moritys
